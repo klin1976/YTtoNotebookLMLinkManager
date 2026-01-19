@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube to NotebookLM Link Manager</title>
+  <meta name="description" content="Batch extract YouTube video links for NotebookLM. Automatically filter out Shorts and short videos.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
+</head>
+<body>
+  <!-- Language Toggle -->
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="langZh">繁中</button>
+    <button class="lang-btn" id="langEn">EN</button>
+  </div>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1 id="title">YouTube to NotebookLM 連結管理器</h1>
+      <p id="subtitle">批次擷取影片連結，快速匯入 NotebookLM</p>
+    </header>
+
+    <!-- API Key Section -->
+    <div class="card">
+      <div class="input-group">
+        <label>
+          <span id="apiKeyLabel">YouTube Data API Key</span>
+          <a href="https://developers.google.com/youtube/v3/getting-started" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="help-link"
+             id="apiKeyHelp">如何取得 API Key？</a>
+        </label>
+        <div class="input-wrapper">
+          <input type="password" 
+                 id="apiKeyInput" 
+                 placeholder="在此貼上你的 API Key..."
+                 autocomplete="off">
+          <button class="btn btn-secondary btn-sm" id="apiKeyToggle">顯示</button>
+        </div>
+        <div class="api-key-actions">
+          <button class="btn btn-secondary btn-sm" id="apiKeyClear">清除已儲存的 Key</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- URL Input Section -->
+    <div class="card">
+      <div class="input-group">
+        <label id="urlLabel">YouTube 網址</label>
+        <div class="input-wrapper">
+          <input type="url" 
+                 id="urlInput" 
+                 placeholder="貼上播放清單或頻道網址...">
+          <button class="btn btn-primary" id="analyzeBtn">
+            <span id="analyzeBtnText">分析</span>
+          </button>
+        </div>
+        <div class="filter-info">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 16v-4"></path>
+            <path d="M12 8h.01"></path>
+          </svg>
+          <span id="filterInfo">Shorts 及 60 秒以下影片已自動排除</span>
+        </div>
+      </div>
+
+      <!-- Status Container -->
+      <div id="statusContainer" class="hidden"></div>
+    </div>
+
+    <!-- Results Section -->
+    <div class="card results" id="resultsSection">
+      <div class="results-header">
+        <div class="results-info" id="resultsInfo"></div>
+        <div class="results-actions">
+          <button class="btn btn-secondary btn-sm" id="selectAllBtn">全選</button>
+          <button class="btn btn-primary btn-sm" id="copySelectedBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span>複製已選連結</span>
+          </button>
+        </div>
+      </div>
+      <div class="video-list" id="videoList"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
