@@ -98,6 +98,54 @@
       </div>
       <div class="video-list" id="videoList"></div>
     </div>
+
+    <!-- How to Get API Key Section -->
+    <div class="card info-section">
+      <h2 class="info-title">
+        <span class="info-icon">🔑</span>
+        <span id="apiKeyTitle">取得 YouTube Data API Key</span>
+      </h2>
+      <div class="info-note">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 16v-4"></path>
+          <path d="M12 8h.01"></path>
+        </svg>
+        <span id="apiKeyNote">每個 API Key 每日有 10,000 單位配額，抓取一次播放清單約消耗 50-200 單位。</span>
+      </div>
+      <h3 id="stepsTitle">步驟</h3>
+      <ol class="info-steps">
+        <li id="step1">前往 <a href="https://console.cloud.google.com/" target="_blank" rel="noopener noreferrer">Google Cloud Console</a></li>
+        <li id="step2">建立專案（或選擇現有專案）</li>
+        <li id="step3">左側選單 → <strong>API 和服務</strong> → <strong>資料庫</strong></li>
+        <li id="step4">搜尋 <code>YouTube Data API v3</code> → 點擊 <strong>啟用</strong></li>
+        <li id="step5">左側選單 → <strong>憑證</strong> → <strong>建立憑證</strong> → <strong>API 金鑰</strong></li>
+        <li id="step6">複製產生的 API Key，貼到網站中</li>
+      </ol>
+    </div>
+
+    <!-- Usage Instructions Section -->
+    <div class="card info-section">
+      <h2 class="info-title">
+        <span class="info-icon">📖</span>
+        <span id="usageTitle">使用方式</span>
+      </h2>
+      <ol class="info-steps">
+        <li id="usage1">開啟 <a href="https://klin1976.github.io/YTtoNotebookLMLinkManager/" target="_blank" rel="noopener noreferrer">線上網站</a></li>
+        <li id="usage2">輸入你的 YouTube Data API Key（首次使用需輸入，之後會自動記住）</li>
+        <li id="usage3">貼上 YouTube 播放清單或頻道網址，例如：
+          <ul class="url-examples">
+            <li><code>https://www.youtube.com/playlist?list=PLxxxxxx</code></li>
+            <li><code>https://www.youtube.com/@ChannelHandle</code></li>
+            <li><code>https://www.youtube.com/c/ChannelName</code></li>
+          </ul>
+        </li>
+        <li id="usage4">點擊「分析」按鈕</li>
+        <li id="usage5">勾選需要的影片</li>
+        <li id="usage6">點擊「複製已選連結」</li>
+        <li id="usage7">到 NotebookLM 貼上連結</li>
+      </ol>
+    </div>
   </div>
 
   <!-- Scripts -->
