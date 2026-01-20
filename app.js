@@ -99,6 +99,58 @@ function updateUI() {
         elements.selectAllBtn.textContent = isAllSelected() ? t('deselectAll') : t('selectAll');
         elements.copySelectedBtn.innerHTML = `<span>${t('copySelected')}</span>`;
     }
+
+    // Update Info Sections
+    updateInfoSections();
+}
+
+function updateInfoSections() {
+    // API Key Section
+    const apiKeyTitleEl = document.getElementById('apiKeyTitle');
+    const apiKeyNoteEl = document.getElementById('apiKeyNote');
+    const stepsTitleEl = document.getElementById('stepsTitle');
+    const step1El = document.getElementById('step1');
+    const step2El = document.getElementById('step2');
+    const step3El = document.getElementById('step3');
+    const step4El = document.getElementById('step4');
+    const step5El = document.getElementById('step5');
+    const step6El = document.getElementById('step6');
+
+    if (apiKeyTitleEl) apiKeyTitleEl.textContent = t('apiKeyTitle');
+    if (apiKeyNoteEl) apiKeyNoteEl.textContent = t('apiKeyNote');
+    if (stepsTitleEl) stepsTitleEl.textContent = t('stepsTitle');
+    if (step1El) step1El.innerHTML = `${t('step1')}<a href="https://console.cloud.google.com/" target="_blank" rel="noopener noreferrer">${t('step1Link')}</a>`;
+    if (step2El) step2El.textContent = t('step2');
+    if (step3El) step3El.innerHTML = `${t('step3_1')}<strong>${t('step3_2')}</strong>${t('step3_3')}<strong>${t('step3_4')}</strong>`;
+    if (step4El) step4El.innerHTML = `${t('step4_1')}<code>YouTube Data API v3</code>${t('step4_2')}<strong>${t('step4_3')}</strong>`;
+    if (step5El) step5El.innerHTML = `${t('step5_1')}<strong>${t('step5_2')}</strong>${t('step5_3')}<strong>${t('step5_4')}</strong>${t('step5_5')}<strong>${t('step5_6')}</strong>`;
+    if (step6El) step6El.textContent = t('step6');
+
+    // Usage Section
+    const usageTitleEl = document.getElementById('usageTitle');
+    const usage1El = document.getElementById('usage1');
+    const usage2El = document.getElementById('usage2');
+    const usage3El = document.getElementById('usage3');
+    const usage4El = document.getElementById('usage4');
+    const usage5El = document.getElementById('usage5');
+    const usage6El = document.getElementById('usage6');
+    const usage7El = document.getElementById('usage7');
+
+    if (usageTitleEl) usageTitleEl.textContent = t('usageTitle');
+    if (usage1El) usage1El.innerHTML = `${t('usage1')}<a href="https://klin1976.github.io/YTtoNotebookLMLinkManager/" target="_blank" rel="noopener noreferrer">${t('usage1Link')}</a>`;
+    if (usage2El) usage2El.textContent = t('usage2');
+    if (usage3El) {
+        usage3El.innerHTML = `${t('usage3')}
+          <ul class="url-examples">
+            <li><code>https://www.youtube.com/playlist?list=PLxxxxxx</code></li>
+            <li><code>https://www.youtube.com/@ChannelHandle</code></li>
+            <li><code>https://www.youtube.com/c/ChannelName</code></li>
+          </ul>`;
+    }
+    if (usage4El) usage4El.textContent = t('usage4');
+    if (usage5El) usage5El.textContent = t('usage5');
+    if (usage6El) usage6El.textContent = t('usage6');
+    if (usage7El) usage7El.textContent = t('usage7');
 }
 
 function toggleApiKeyVisibility() {
