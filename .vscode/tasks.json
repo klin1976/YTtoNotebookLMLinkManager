@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "📝 更新對話紀錄提醒",
+      "type": "shell",
+      "command": "echo",
+      "args": ["請在 Antigravity Agent 中輸入：「更新對話紀錄」或「我要關閉專案了」"],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "🚀 推送對話紀錄到 GitHub",
+      "type": "shell",
+      "command": "echo",
+      "args": ["請在 Antigravity Agent 中輸入：「推送對話紀錄到 GitHub」"],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+  ]
+}
