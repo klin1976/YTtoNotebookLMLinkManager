@@ -2,19 +2,6 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "📂 開啟提醒檔案",
-      "type": "shell",
-      "command": "code",
-      "args": ["REMINDER.txt"],
-      "runOptions": {
-        "runOn": "folderOpen"
-      },
-      "problemMatcher": [],
-      "presentation": {
-        "reveal": "silent"
-      }
-    },
-    {
       "label": "📝 更新對話紀錄提醒",
       "type": "shell",
       "command": "echo",
