@@ -15,7 +15,6 @@ const elements = {
     apiKeyLabel: document.getElementById('apiKeyLabel'),
     apiKeyInput: document.getElementById('apiKeyInput'),
     apiKeyToggle: document.getElementById('apiKeyToggle'),
-    apiKeyHelp: document.getElementById('apiKeyHelp'),
     apiKeyClear: document.getElementById('apiKeyClear'),
     urlLabel: document.getElementById('urlLabel'),
     urlInput: document.getElementById('urlInput'),
@@ -29,7 +28,10 @@ const elements = {
     videoList: document.getElementById('videoList'),
     filterInfo: document.getElementById('filterInfo'),
     langZh: document.getElementById('langZh'),
-    langEn: document.getElementById('langEn')
+    langEn: document.getElementById('langEn'),
+    langJa: document.getElementById('langJa'),
+    langKo: document.getElementById('langKo'),
+    langTh: document.getElementById('langTh')
 };
 
 // Initialize
@@ -50,6 +52,9 @@ function bindEvents() {
     // Language toggle
     elements.langZh.addEventListener('click', () => setLang('zh'));
     elements.langEn.addEventListener('click', () => setLang('en'));
+    elements.langJa.addEventListener('click', () => setLang('ja'));
+    elements.langKo.addEventListener('click', () => setLang('ko'));
+    elements.langTh.addEventListener('click', () => setLang('th'));
 
     // API Key toggle visibility
     elements.apiKeyToggle.addEventListener('click', toggleApiKeyVisibility);
@@ -79,6 +84,9 @@ function updateUI() {
     // Update language button states
     elements.langZh.classList.toggle('active', currentLang === 'zh');
     elements.langEn.classList.toggle('active', currentLang === 'en');
+    elements.langJa.classList.toggle('active', currentLang === 'ja');
+    elements.langKo.classList.toggle('active', currentLang === 'ko');
+    elements.langTh.classList.toggle('active', currentLang === 'th');
 
     // Update text content
     elements.title.textContent = t('title');
@@ -86,7 +94,6 @@ function updateUI() {
     elements.apiKeyLabel.textContent = t('apiKeyLabel');
     elements.apiKeyInput.placeholder = t('apiKeyPlaceholder');
     elements.apiKeyToggle.textContent = isApiKeyVisible ? t('apiKeyHide') : t('apiKeyShow');
-    elements.apiKeyHelp.textContent = t('apiKeyHelp');
     elements.apiKeyClear.textContent = t('clearKey');
     elements.urlLabel.textContent = t('urlLabel');
     elements.urlInput.placeholder = t('urlPlaceholder');
